@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - news_cms@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="news_cms">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="demo"/>
+    <schema id="3" name="homework"/>
+    <schema id="4" name="if_information"/>
+    <schema id="5" name="information_schema"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="sys"/>
+    <schema id="9" name="test"/>
+    <table id="10" parent="1" name="cms_admin"/>
+    <table id="11" parent="1" name="cms_menu"/>
+    <table id="12" parent="1" name="cms_news"/>
+    <table id="13" parent="1" name="cms_news_content"/>
+    <table id="14" parent="1" name="cms_position"/>
+    <table id="15" parent="1" name="cms_position_content"/>
+    <column id="16" parent="10" name="admin_id">
+      <mandatory>1</mandatory>
+      <data-type>mediumint(6) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="10" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="18" parent="10" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(32)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="19" parent="10" name="lastloginip">
+      <data-type>varchar(15)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="20" parent="10" name="lastlogintime">
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="21" parent="10" name="email">
+      <data-type>varchar(40)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="22" parent="10" name="realname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="23" parent="10" name="status">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <index id="24" parent="10" name="username">
+      <columns>username</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="25" parent="10" name="PRIMARY">
+      <columns>admin_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="26" parent="11" name="menu_id">
+      <mandatory>1</mandatory>
+      <data-type>smallint(6) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="27" parent="11" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(40)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="28" parent="11" name="parentid">
+      <mandatory>1</mandatory>
+      <data-type>smallint(6)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="29" parent="11" name="m">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="30" parent="11" name="c">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="31" parent="11" name="f">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="32" parent="11" name="data">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="33" parent="11" name="listorder">
+      <mandatory>1</mandatory>
+      <data-type>smallint(6) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="34" parent="11" name="status">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="35" parent="11" name="type">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="36" parent="11" name="listorder">
+      <columns>listorder</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="37" parent="11" name="module">
+      <columns>m
+c
+f</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="38" parent="11" name="parentid">
+      <columns>parentid</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="39" parent="11" name="PRIMARY">
+      <columns>menu_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="40" parent="12" name="news_id">
+      <mandatory>1</mandatory>
+      <data-type>mediumint(8) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="41" parent="12" name="catid">
+      <mandatory>1</mandatory>
+      <data-type>smallint(5) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="42" parent="12" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(80)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="43" parent="12" name="small_title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="44" parent="12" name="title_font_color">
+      <comment>标题颜色</comment>
+      <data-type>varchar(250)|0</data-type>
+    </column>
+    <column id="45" parent="12" name="thumb">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="46" parent="12" name="keywords">
+      <mandatory>1</mandatory>
+      <data-type>char(40)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="47" parent="12" name="description">
+      <comment>文章描述</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(250)|0</data-type>
+    </column>
+    <column id="48" parent="12" name="posids">
+      <mandatory>1</mandatory>
+      <data-type>varchar(250)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="49" parent="12" name="listorder">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(3) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="50" parent="12" name="status">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="51" parent="12" name="copyfrom">
+      <comment>来源</comment>
+      <data-type>varchar(250)|0</data-type>
+    </column>
+    <column id="52" parent="12" name="username">
+      <mandatory>1</mandatory>
+      <data-type>char(20)|0</data-type>
+    </column>
+    <column id="53" parent="12" name="create_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="54" parent="12" name="update_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="55" parent="12" name="count">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="56" parent="12" name="catid">
+      <columns>catid
+status
+news_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="57" parent="12" name="listorder">
+      <columns>catid
+status
+listorder
+news_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="58" parent="12" name="status">
+      <columns>status
+listorder
+news_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="59" parent="12" name="PRIMARY">
+      <columns>news_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="60" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>mediumint(8) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="61" parent="13" name="news_id">
+      <mandatory>1</mandatory>
+      <data-type>mediumint(8) unsigned|0</data-type>
+    </column>
+    <column id="62" parent="13" name="content">
+      <mandatory>1</mandatory>
+      <data-type>mediumtext|0</data-type>
+    </column>
+    <column id="63" parent="13" name="create_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="64" parent="13" name="update_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="65" parent="13" name="news_id">
+      <columns>news_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="66" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="67" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>smallint(5) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="68" parent="14" name="name">
+      <mandatory>1</mandatory>
+      <data-type>char(30)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="69" parent="14" name="status">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="70" parent="14" name="description">
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="71" parent="14" name="create_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="72" parent="14" name="update_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="73" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="74" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>smallint(5) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="75" parent="15" name="position_id">
+      <mandatory>1</mandatory>
+      <data-type>int(5) unsigned|0</data-type>
+    </column>
+    <column id="76" parent="15" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="77" parent="15" name="thumb">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="78" parent="15" name="url">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="79" parent="15" name="news_id">
+      <mandatory>1</mandatory>
+      <data-type>mediumint(8) unsigned|0</data-type>
+    </column>
+    <column id="80" parent="15" name="listorder">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(3) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="81" parent="15" name="status">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="82" parent="15" name="create_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="83" parent="15" name="update_time">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="84" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
